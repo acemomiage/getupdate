@@ -1,0 +1,20 @@
+# getupdate.conf sample file.
+# Using  TOML format.
+
+[PATH]
+work_path = '/var/www/html/daily_search'
+dir_name = 'foo'
+hierarchy = true
+
+[SEARCH]
+ua               = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8'
+keywords         = ['%22砂金%22']
+exclude_keywords = ['%22メルカリ%22']
+numbers          = 20
+lang             = 'ja'
+
+[MAIL]
+send_mail = true
+to = 'example@example.com'
+from = 'example@example.com'
+subject = 'sample'
