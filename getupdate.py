@@ -121,7 +121,8 @@ def print_html(f, soup, work_path):
         try:
             title = str(i.find('h3').text)
             url = str(i.a.get('href'))
-            desc = str(i.find('span', attrs={'class': 'st'}).text)
+            desc = str(i.find('span', attrs={'class': 'aCOpRe'}).text)
+#            desc = str(i.find('span', attrs={'class': 'st'}).text)
             f.write('<div class="article"><p><h3>{}</h3><a href="{}">{}</a></p>\n'.format(title, url, url))
             f.write('<p>{}</p></div>\n<hr>\n'.format(desc))
         except:
@@ -150,6 +151,7 @@ def send_mail(conf, file_path):
 
 def request_query(conf):
 #    UA = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8'}
+#    UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'}
     UA = {'User-Agent' : conf['SEARCH']['ua']}
     file_path = make_files(conf)
     with open(file_path, mode='w') as f:
